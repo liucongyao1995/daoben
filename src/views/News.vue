@@ -112,7 +112,6 @@ export default {
           background-size: contain;
         }
       }
-      
   }
   .text-decoration {
     text-decoration: none;
