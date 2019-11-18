@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <el-container>
-      <el-header>
+      <el-header v-if="!isPhone">
         <div class="logo">
           <img src="./assets/img/logo.png" alt />
         </div>
@@ -15,22 +15,18 @@
           <el-menu-item index="/goin">首页</el-menu-item>
           <el-menu-item index="/product">创始人故事</el-menu-item>
           <el-menu-item index="/download">品牌文化</el-menu-item>
-          <!-- <el-menu-item index="/case">专家团队</el-menu-item> -->
           <el-menu-item index="/news">婚姻幸福银行</el-menu-item>
           <el-menu-item index="/case">专家团队</el-menu-item>
           <el-menu-item index="/want">私享•源动力生殖生命力管理</el-menu-item>
-          <!-- <el-menu-item index="/">首页</el-menu-item>
-          <el-menu-item index="/news">新闻资讯</el-menu-item>
-          <el-menu-item index="/product">产品中心</el-menu-item>
-          <el-menu-item index="/case">经典案例</el-menu-item>
-          <el-menu-item index="/goin">走进科建</el-menu-item>
-          <el-menu-item index="/download">下载APP</el-menu-item> -->
         </el-menu>
       </el-header>
+      <van-dropdown-menu v-if="isPhone">
+        <van-dropdown-item v-model="value1" :options="option1" @change='change(value1)'/>
+      </van-dropdown-menu>
       <el-main>
         <router-view />
       </el-main>
-      <div class="footer" v-show="isShow">
+      <div class="footer">
         <div class="footer-content">
           <ul class="content-nav">
             <li>
@@ -56,13 +52,38 @@ export default {
     return {
       router: true,
       defaultActive: "/",
-      isShow: false
+      isShow: false,
+      isPhone:false,
+       value1: 0,
+         option1: [
+        { text: '首页', value: 0,index: '/goin'},
+        { text: '创始人故事', value: 1,index:'/product' },
+        { text: '品牌文化', value: 2,index:'/download' },
+        { text: '婚姻幸福银行', value: 3,index:'/news' },
+        { text: '专家团队', value: 4,index:'/case' },
+        { text: '私享•源动力生殖生命力管理', value: 5,index:'/want' }
+      ],
     };
   },
   methods: {
     handleSelect(key) {
       this.isShow = this.defaultActive != key;
       window.console.log(this.isShow);
+    },
+    change(value){
+      // window.console.log(value);
+      this.$router.push({
+        path: this.option1[value].index
+      });
+    }
+  },
+  mounted(){
+    // 判断是否是移动端
+    if(/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)){
+      this.isPhone=true;
+    }
+    if(!/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)){
+      this.isPhone=false;
     }
   }
 };

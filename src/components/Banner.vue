@@ -40,9 +40,9 @@ export default {
     width: 100%;
     height: 100%;
 
-    padding: 10px;
-    margin: -10px;
-    filter: blur(10px);
+    padding: 0;
+    margin: 0;
+    // filter: blur(10px);
 
     background-image: url(../assets/img/bgtop.jpg);
     background-position: center;
@@ -58,7 +58,7 @@ export default {
   .banner-title {
     position: absolute;
     color: #fff;
-    font-size: 30px;
+    font-size: 20px;
     font-weight: 400;
     line-height: 160px;
     text-align: center;

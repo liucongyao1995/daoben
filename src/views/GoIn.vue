@@ -266,7 +266,7 @@ export default {
   .section {
     width: 100%;
     .section-content {
-      width: 400px;
+      width:100%;
       margin: 0 auto;
       background-color: #fff;
       .content-summary {
@@ -287,14 +287,15 @@ export default {
           }
           .content {
             color: #14679f;
-            font-size: 14px;
+            font-size: 10px;
             text-indent: 25px;
             line-height: 30px;
+            padding: 12px
           }
         }
 
         .summary-right {
-          width: 100%;
+          width: 99%;
           height: 310px;
           border: 2px solid #1d42b9;
           border-radius: 10px;
@@ -309,7 +310,7 @@ export default {
       }
       //发展历程
       .content-course {
-        padding: 50px 0;
+        padding: 0;
         .course-time {
           width: 100%;
           height: 400px;
@@ -342,7 +343,7 @@ export default {
                   p {
                     color: #fff;
                     text-align: center;
-                    padding: 15px;
+                    padding: 5px;
                   }
                 }
               }
@@ -358,7 +359,7 @@ export default {
         flex-direction: column;
         justify-content: center;
         align-items: flex-start;
-        padding-left: 0;
+        padding: 12px;
         background-color: #c2daeb;
         h3 {
           color: #3c6088;
@@ -366,14 +367,14 @@ export default {
         }
         p {
           color: #3c6088;
-          font-size: 16px;
-          padding: 5px 0;
+          font-size: 10px;
+          padding: 0;
         }
         span {
           font-weight: 400;
-          line-height: 36px;
+          line-height: 26px;
           font-size: 10px;
-          padding: 5px 0;
+          padding: 0;
         }
       }
 
@@ -409,7 +410,7 @@ export default {
 
       //团队风采
       .content-team {
-        padding: 50px 100px;
+        padding: 0 0;
         .swiper-img {
           height: 400px;
           background: no-repeat center;

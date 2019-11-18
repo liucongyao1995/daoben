@@ -79,7 +79,7 @@ export default {
   margin: 0;
   padding: 0;
 }
-@media screen and (min-width:300px) and (max-width:600px){
+@media screen and (min-width:300px) and (max-width:800px){
   .news {
   width: 100%;
   height: 100%;
@@ -101,21 +101,18 @@ export default {
       img{
         width: 100%;
       }
-          .content-team {
+      .content-team {
         padding: 0;
-        .el-carousel{
-          //  height: 200px;
-          .el-carousel__container{
-            height: 170px;
-          }
+        /deep/.el-carousel__container{
+          height: 180px;
         }
-        
         .swiper-img {
-          height: 170px;
+          height:180px;
           background: no-repeat center;
-          background-size: cover;
+          background-size: contain;
         }
       }
+      
   }
   .text-decoration {
     text-decoration: none;

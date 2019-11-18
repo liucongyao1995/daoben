@@ -107,7 +107,7 @@ export default {
     }
   }
   .product-content {
-    width:400px;
+    width:100%;
     margin: 0 auto;
     background-color: #fff;
   }
