@@ -141,7 +141,7 @@
 <script>
 import jiti from '../assets/img/jiti.jpg';
 import gaoguan from '../assets/img/gaoguan.jpg';
-import yier from '../assets/img/12.jpg';
+// import yier from '../assets/img/12.jpg';
 import Banner from "../components/Banner";
 import { swiper, swiperSlide } from "vue-awesome-swiper";
 export default {
@@ -197,7 +197,7 @@ export default {
       teamItem: [
         {Img:jiti},
         {Img:gaoguan},
-        {Img:yier},
+        // {Img:yier},
 
       ],
       swiperOption: {
@@ -255,7 +255,7 @@ export default {
   .go-in {
   width: 100%;
   height: 100%;
-  background-color: #14679f;
+  background-color: #005737;
   .banner{
     height: 160px;
     .banner-title{
@@ -550,7 +550,7 @@ export default {
 .go-in {
   width: 100%;
   height: 100%;
-  background-color: #14679f;
+  background-color: #005737;
   // position: relative;
   // overflow: hidden;
   .section {

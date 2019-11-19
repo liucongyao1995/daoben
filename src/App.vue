@@ -20,7 +20,11 @@
           <el-menu-item index="/want">私享•源动力生殖生命力管理</el-menu-item>
         </el-menu>
       </el-header>
+      
       <van-dropdown-menu v-if="isPhone">
+        <!-- <div class="logo">
+          <img src="./assets/img/logo.png" alt />
+      </div> -->
         <van-dropdown-item v-model="value1" :options="option1" @change='change(value1)'/>
       </van-dropdown-menu>
       <el-main>
@@ -97,6 +101,10 @@ export default {
   }
 html,body {
   height: 100%;
+}
+.logo {
+    width: 65px;
+    padding: 10px;
 }
 .el-header {
   display: flex;
