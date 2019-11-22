@@ -5,6 +5,7 @@ import axios from 'axios'
 
 import Vant from 'vant';
 import 'vant/lib/index.css';
+import './assets/css/global.scss'
 Vue.use(Vant);
 
 
@@ -44,7 +45,11 @@ Vue.prototype.$http = axios
 
 // 图片服务器地址
 Vue.prototype.imgserver = 'http://shkjgw.shkjem.com/'
+router.afterEach((to,from,next) => {
 
+  window.scrollTo(0,0);
+
+});
 new Vue({
   router,
   render: h => h(App)

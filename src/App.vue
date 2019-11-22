@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <el-container>
+    <!-- <el-container> -->
       <el-header v-if="!isPhone">
         <div class="logo">
           <img src="./assets/img/logo.png" alt />
@@ -13,11 +13,21 @@
           :router="router"
         >
           <el-menu-item index="/goin">首页</el-menu-item>
-          <el-menu-item index="/product">创始人故事</el-menu-item>
-          <el-menu-item index="/download">品牌文化</el-menu-item>
-          <el-menu-item index="/news">婚姻幸福银行</el-menu-item>
-          <el-menu-item index="/case">专家团队</el-menu-item>
-          <el-menu-item index="/want">私享•源动力生殖生命力管理</el-menu-item>
+          <el-menu-item index="/want">明星产品</el-menu-item>
+          <el-submenu index="/dujia">
+            <template slot="title">独家品牌</template>
+             <el-menu-item index="/kecheng">课程</el-menu-item>
+             <el-menu-item index="/tupian">图片</el-menu-item>
+          </el-submenu>
+          <!-- <el-menu-item index="/dujia">
+          
+          <template slot="title">独家品牌</template>
+             <el-menu-item index="/dujia-kecheng">课程</el-menu-item>
+          </el-menu-item> -->
+
+          <el-menu-item index="/case">技术支持</el-menu-item>
+          <el-menu-item index="/contact">联系我们</el-menu-item>
+          <!-- <el-menu-item index="/want">私享•源动力生殖生命力管理</el-menu-item> -->
         </el-menu>
       </el-header>
       
@@ -27,10 +37,11 @@
       </div> -->
         <van-dropdown-item v-model="value1" :options="option1" @change='change(value1)'/>
       </van-dropdown-menu>
-      <el-main>
-        <router-view />
-      </el-main>
-      <div class="footer">
+      <!-- <el-main>
+       
+      </el-main> -->
+       <router-view />
+      <!-- <div class="footer">
         <div class="footer-content">
           <ul class="content-nav">
             <li>
@@ -42,11 +53,11 @@
           </ul>
           <img src="./assets/img/erweima.png" alt />
         </div>
-        <!-- <div class="copyright">
+        <div class="copyright">
           <span>所有画作归道本君逸版权所有，侵权必究</span>
-        </div> -->
-      </div>
-    </el-container>
+        </div>
+      </div> -->
+    <!-- </el-container> -->
   </div>
 </template>
 
@@ -123,6 +134,8 @@ html,body {
 }
 .el-main {
   padding: 0 !important;
+  width: 100%;
+  height: 100%;
 }
 
 .footer {
@@ -194,10 +207,14 @@ body {
   display: flex;
   justify-content: space-between;
   align-content: center;
-  width: 1240px;
+  width: 100%;
   margin: 0 auto;
-
-
+  position: fixed;
+  top: 0;
+  background-color: #fff;
+  opacity: 0.8;
+  z-index: 10000;
+  border-bottom: 1px solid #ccc;
   .logo {
     width: 65px;
     padding: 10px;
@@ -209,6 +226,8 @@ body {
 }
 .el-main {
   padding: 0 !important;
+  width: 100%;
+  height: 100%;
 }
 .footer {
   width: 100%;

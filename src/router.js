@@ -20,7 +20,7 @@ let kejianrouter = new Router({
       component: () => import('./views/want.vue'),
     },
     {
-      path: '/newsdetails/:id',
+      path: '/newsdetails',
       name: 'newsdetails',
       component: () => import('./views/NewsDetails.vue'),
     },
@@ -33,6 +33,37 @@ let kejianrouter = new Router({
       path: '/case',
       name: 'case',
       component: () => import('./views/Case.vue')
+    },
+    {
+      path: '/contact',
+      name: 'contact',
+      component: () => import('./views/contact.vue')
+    },
+    {
+      path: '/jishu',
+      name: 'jishu',
+      component: () => import('./views/jishu.vue')
+    },
+    {
+      path: '/dujia',
+      name: 'dujia',
+      component: () => import('./views/dujia.vue'),
+      children:[{
+        path: '/kecheng',
+        name: 'kecheng',
+        component: () => import('./views/dujia.vue'),
+      },
+      {
+        path: '/tupian',
+        name: 'tupian',
+        component: () => import('./views/tupian.vue'),
+      }
+      ]
+    },
+    {
+      path: '/mingxingchanpin',
+      name: 'mingxingchanpin',
+      component: () => import('./views/mingxingchanpin.vue')
     },
     {
       path: '/casedetails/:id',

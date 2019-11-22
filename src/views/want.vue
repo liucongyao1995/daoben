@@ -1,6 +1,6 @@
 <template>
   <div class="download">
-    <banner img="../assets/img/appDown.jpg" title="私享•源动力生殖生命力管理" />
+    <!-- <banner img="../assets/img/appDown.jpg" title="私享•源动力生殖生命力管理" /> -->
       <div class="download-section" v-loading="loading">
         <div class="download-section-content">
           <img src="../assets/img/wuyuan.jpg" alt="">
@@ -26,16 +26,16 @@
     </div>
 </template>
 <script>
-import Banner from "../components/Banner";
+// import Banner from "../components/Banner";
 export default {
   data(){
     return{
       loading: false,
     }
   },
-  components: {
-    Banner
-  }
+  // components: {
+  //   Banner
+  // }
 };
 </script>
 
@@ -73,7 +73,7 @@ export default {
 .download {
   width: 100%;
   height: 100%;
-  background-color: #14679f;
+  // background-color: #14679f;
   position: relative;
   overflow: hidden;
 
@@ -82,7 +82,7 @@ export default {
     //height: 1600px;
 
     &-content {
-      width: 1240px;
+      width: 100%;
       //height: 1600px;
       margin: 0 auto;
       background-color: #fff;

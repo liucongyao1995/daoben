@@ -1,11 +1,22 @@
 <template>
   <div class="go-in">
-    <banner img="../assets/img/bgtop.jpg" title="公司简介" />
-    <div class="section" v-loading="loading">
+    <!-- <banner img="../assets/img/bgtop.jpg" title="公司简介" /> -->
+    <el-carousel class="forImg" height="800px">
+      <el-carousel-item v-for="item in Img" :key="item">
+        <img :src="item">
+      </el-carousel-item>
+    </el-carousel>
+    <div class="section">
       <div class="section-content">
-        <div class="content-summary">
+        <!-- <div class="content-summary">
+            <div class="top">
+            <h3>发展历程</h3>
+            <p>DEVELOPMENT</p>
+            <div class="border"></div>
+            <div class="timeline"></div>
+          </div>
           <div class="summary-left">
-            <!-- <p class="title">公司简介</p> -->
+        
             <p class="eTitle">助力国家经济发展，共创女性幸福事业</p>
             <p class="content">
               当今社会，随着女性的压力越来越大，既要承担工作的压力，又要承担家庭的压力，
@@ -18,7 +29,7 @@
               三分之一的财富是由女性市场产生的，展望生殖健康产业市场，正以每年30%-50%的速
               度增加女性根源产业链，未来定是女性市场的下一个新的财富增长点。
             </p>
-            <!-- <p class="title">公司简介</p> -->
+           
             <p class="eTitle">一站式服务，全方位幸福解决方案</p>
             <p class="content">
               道本君逸，拥有一群精于医术更诚于品德的权威学者、专科专家；历经多年沉淀、潜心研
@@ -35,11 +46,32 @@
           <div class="summary-right">
             <img src="../assets/img/logo.png" alt />
           </div>
-        </div>
-        <el-divider class="el-divider-active">
+        </div> -->
+        <!-- <el-divider class="el-divider-active">
           <i class="el-icon-arrow-down el-icon-arrow-down-active"></i>
-        </el-divider>
-        <!-- 发展历程 -->
+        </el-divider> -->
+          <div class="content-course">
+          <div class="top">
+            <h3>企业简介</h3>
+            <p>Company introduction</p>
+            <div class="border"></div>
+            <div class="timeline"></div>
+          </div>
+          <div  class="company">
+            <p>道本君逸：道是本质，是无所不在的真理。</p>
+            <p>道本君逸成立于2008年，专注女性生殖生命力健康管理与婚姻幸福文化传播。</p>
+            <p>以普及女性健康管理、女性生殖抗衰、美臀抗衰、情感教育、婚姻幸福等系列营销品牌教育为主，传播女性健康美丽文化，缔造幸福女性为宗旨，打造女性由内而外的身、心、灵生殖生命力健康管理机构。
+            </p>
+            <p>公司注重产品的专业化与高品质，每一款产品都经过严格的临床实验和成熟的市场验证才引进，推出适合女性群体的生殖抗衰产品。
+            </p>
+            <p>公司以全新的人性化管理制度，凝聚了多名优秀的科研、生产技术和管理人才，拥有强
+            大的销售队伍及一批由博士教授级著名保健专家、生物工程专家组成的生物工程学、中医药
+            学的国家级专家智囊团队；并以准确的市场定位和独到的营销模式与全国千家美容院代理商
+            结成渠道合作伙伴,每年不间断为数十万中青年女性提供全球最先近的抗衰老理念及一对一
+            的个性化调理方案，帮助更多的女性建立正确的生殖健康管理观念。以造福亿万女性家庭健
+            康，共享甜蜜圆满人生为使命，提高全球女性婚姻幸福指数！</p>
+          </div>
+        </div>
         <div class="content-course">
           <div class="top">
             <h3>发展历程</h3>
@@ -71,7 +103,7 @@
           </div>
         </div>
 
-        <div class="content-culture">
+        <!-- <div class="content-culture">
           <h3>企业文化</h3>
           <h3>CULTURE</h3>
           <p>道本君逸：道是本质，是无所不在的真理。</p>
@@ -86,34 +118,13 @@
 结成渠道合作伙伴,每年不间断为数十万中青年女性提供全球最先近的抗衰老理念及一对一
 的个性化调理方案，帮助更多的女性建立正确的生殖健康管理观念。以造福亿万女性家庭健
 康，共享甜蜜圆满人生为使命，提高全球女性婚姻幸福指数！</span>
-        </div>
-        <!-- 公司荣誉 -->
-        <!-- <div class="content-honor">
-          <div class="honor-big-img">
-            <el-dialog :title="dialogTitle" :visible.sync="dialogTableVisible">
-              <img v-lazy="dialogUrl" alt />
-            </el-dialog>
-          </div>
-          <div class="top">
-            <h3>公司荣誉</h3>
-            <p>HONOR</p>
-            <div class="border"></div>
-          </div>
-          <ul class="honor-show">
-            <li v-for="(honor,index) in honorList" :key="index">
-              <img
-                v-lazy="imgserver+honor.Img"
-                @click="dialogTableVisible = true ;dialogUrl = imgserver + honor.Img;dialogTitle= honor.Remark"
-              />
-            </li>
-          </ul>
-          <p>点击图片查看大图</p>
         </div> -->
-        <!-- 团队风采 -->
         <div class="content-team">
           <div class="top">
             <h3>团队风采</h3>
             <p>TEAM</p>
+            <div class="border" style="margin-bottom:10px"></div>
+            
           </div>
           <el-carousel :interval="4000" type="card">
             <el-carousel-item v-for="(team,index) in teamItem" :key="index">
@@ -121,18 +132,15 @@
             </el-carousel-item>
           </el-carousel>
         </div>
-        <!-- 合作伙伴 -->
-        <!-- <div class="content-partner">
-          <div class="top">
-            <h3>合作伙伴</h3>
-            <p>RARTNERS</p>
-            <ul class="partner-img">
-              <li v-for="(partner,i) in partnerImg" :key="i">
-                <img v-lazy="imgserver+partner.Img" alt />
-              </li>
-            </ul>
-          </div>
-        </div> -->
+        <img src="../assets/img/kan.jpg" alt="" @click="playVideo" v-if='showVideo'>
+        <div class="p-video" v-show='!showVideo'>
+          <video-player
+            class="video-player vjs-custom-skin"
+            ref="videoPlayer"
+            :playsinline="true"
+            :options="playerOptions"
+          ></video-player>
+        </div>
       </div>
     </div>
   </div>
@@ -140,18 +148,50 @@
 
 <script>
 import jiti from '../assets/img/jiti.jpg';
+import baima from '../assets/img/bgtop.jpg';
+import shidafuneng from '../assets/img/shidafuneng.jpg';
+import zhuanzhu from '../assets/img/zhuanzhu.jpg';
+import sixiang from '../assets/img/sixiang.jpg';
 import gaoguan from '../assets/img/gaoguan.jpg';
 // import yier from '../assets/img/12.jpg';
-import Banner from "../components/Banner";
+// import Banner from "../components/Banner";
 import { swiper, swiperSlide } from "vue-awesome-swiper";
 export default {
   components: {
-    Banner,
+
     swiper,
     swiperSlide
   },
   data() {
     return {
+      showVideo:true,
+      videoSrc: "http://106.52.31.88:8080/examples/move.mp4",
+      playerOptions: {
+        playbackRates: [0.5, 1.0, 1.5, 2.0, 4.0, 8.0], //可选择的播放速度
+        autoplay: false, //如果true,浏览器准备好时开始回放。
+        muted: false, // 默认情况下将会消除任何音频。
+        loop: false, // 视频一结束就重新开始。
+        preload: "auto", // 建议浏览器在<video>加载元素后是否应该开始下载视频数据。auto浏览器选择最佳行为,立即开始加载视频（如果浏览器支持）
+        language: "zh-CN",
+        aspectRatio: "16:9", // 将播放器置于流畅模式，并在计算播放器的动态大小时使用该值。值应该代表一个比例 - 用冒号分隔的两个数字（例如"16:9"或"4:3"）
+        fluid: true, // 当true时，Video.js player将拥有流体大小。换句话说，它将按比例缩放以适应其容器。
+        sources: [
+          {
+            type: "",
+            src: "http://106.52.31.88:8080/examples/move.mp4" //url地址
+          }
+        ],
+        poster: "../assets/img/logo.png", //你的封面地址
+        width: document.documentElement.clientWidth,
+        notSupportedMessage: "此视频暂无法播放，请稍后再试", //允许覆盖Video.js无法播放媒体源时显示的默认信息。
+        controlBar: {
+          timeDivider: true, //当前时间和持续时间的分隔符
+          durationDisplay: true, //显示持续时间
+          remainingTimeDisplay: false, //是否显示剩余时间功能
+          fullscreenToggle: true //全屏按钮
+        }
+      },
+      Img:[baima,shidafuneng,zhuanzhu,sixiang],
       loading: true,
       honorList: [],
       partnerImg: [],
@@ -212,36 +252,16 @@ export default {
     };
   },
   mounted() {
-    this.$http
-      .all([
-        this.$http.get("Honor/GetHonorAll"),
-        this.$http.get("Enterprise/GetEnterpriseAll"),
-        this.$http.get(`Team/GetTeamAll`),
-        this.$http.get(`Course/GetCourseAll`)
-      ])
-      .then(
-        this.$http.spread(
-          (responseHonor, responseEnterprise, responseTeam, responseCourse) => {
-            this.honorList = responseHonor.data;
-            this.partnerImg = responseEnterprise.data;
-            // this.teamItem = responseTeam.data;
+    
+  },
+  methods:{
+    playVideo(){
+      this.showVideo=false;
+      if(this.$refs.videoPlayer){
+              this.$refs.videoPlayer.player.play();
+      }
 
-            var groupCount = Math.ceil(responseCourse.data.length / 2);
-            window.console.log(groupCount);
-            for (let i = 0; i < groupCount; i++) {
-              let img2 = [];
-              for (let j = 0; j < 2; j++) {
-                if (responseCourse.data.length - 1 >= i * 2 + j) {
-                  img2.push(responseCourse.data[i * 2 + j]);
-                }
-              }
-              // this.courseList.push(img2);
-            }
-            window.console.log(this.courseList);
-            this.loading = false;
-          }
-        )
-      );
+    }
   }
 };
 </script>
@@ -550,13 +570,24 @@ export default {
 .go-in {
   width: 100%;
   height: 100%;
-  background-color: #005737;
-  // position: relative;
-  // overflow: hidden;
+  .forImg{
+    img{
+      width: 100%;
+    height: 100%;
+    }
+  }
+  background-color: #005737;  
+  .el-carousel__item:nth-child(2n) {
+    background-color: #99a9bf;
+  }
+  
+  .el-carousel__item:nth-child(2n+1) {
+    background-color: #d3dce6;
+  }
   .section {
     width: 100%;
     &-content {
-      width: 1240px;
+      width:100%;
       margin: 0 auto;
       background-color: #fff;
       .content-summary {
@@ -604,10 +635,21 @@ export default {
       //发展历程
       .content-course {
         padding: 50px 0;
+        .company{
+           width: 1000px;
+          height: 400px;
+          margin: 20px auto;
+          p{
+            //  color: #fff;
+                    text-align: left;
+                    padding: 15px;
+          }
+        }
         .course-time {
           width: 1000px;
           height: 400px;
           margin: 20px auto;
+
           .swiper-container {
             height: 100%;
           }

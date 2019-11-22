@@ -1,8 +1,7 @@
 <template>
   <div class="case">
-    <banner img="../assets/img/bgtop.jpg" title="专业团队" />
-    <div class="case-section" v-loading="loading">
-      <div class="case-section-content">
+    <div class="case-section mt60">
+      <div class="case-section-content textCenter">
         <img src="../assets/img/16.png" alt="">
         <img src="../assets/img/17.png" alt="">
         <img src="../assets/img/18.png" alt="">
@@ -74,12 +73,12 @@ export default {
   height: 100%;
   position: relative;
   overflow: hidden;
-  background-color: #14679f;
+  // background-color: #14679f;
 
   &-section {
     width: 100%;
     &-content {
-      width: 1240px;
+      width: 100%;
       min-height: 1000px;
       margin: 0 auto;
       background-color: #fff;
