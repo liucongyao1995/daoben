@@ -1,6 +1,9 @@
 .mt60{
     margin-top: 60px;
 }
+.mt80{
+    margin-top: 80px;
+}
 .w100{
     width: 100%;
 }
@@ -13,6 +16,29 @@
 .font20{
     font-size: 20px;
 }
+.font14{
+    font-size: 14px !important;
+}
 .pd10{
     padding:10px;
 }
+.top {
+    h3,
+    p {
+      text-align: center;
+      color: #3c6088;
+      font-weight: 400;
+      padding: 10px 0;
+    }
+    h3 {
+      font-size: 30px;
+    }
+    p {
+      font-size: 20px;
+    }
+    .border {
+      border-bottom: 1px solid #3c6088;
+      width: 15%;
+      margin: 0 auto;
+    }
+  }

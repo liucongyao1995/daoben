@@ -1,6 +1,6 @@
 <template>
   <div class="NewsDetails">
-   <div class="mt60" style="height:800px;width:100%;background-color:red">页面需要调整  敬请期待</div>
+   <div class="mt80" style="height:800px;width:100%;background-color:pink">页面需要调整  敬请期待</div>
   </div>
 </template>
 

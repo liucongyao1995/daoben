@@ -45,19 +45,20 @@ let kejianrouter = new Router({
       component: () => import('./views/jishu.vue')
     },
     {
+      path: '/tupian',
+      name: 'tupian',
+      component: () => import('./views/tp.vue'),
+    },
+    {
       path: '/dujia',
       name: 'dujia',
       component: () => import('./views/dujia.vue'),
-      children:[{
-        path: '/kecheng',
+      children:[
+        {
+        path: '/dujia/kecheng',
         name: 'kecheng',
         component: () => import('./views/dujia.vue'),
       },
-      {
-        path: '/tupian',
-        name: 'tupian',
-        component: () => import('./views/tupian.vue'),
-      }
       ]
     },
     {

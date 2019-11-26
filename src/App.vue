@@ -11,12 +11,14 @@
           mode="horizontal"
           @select="handleSelect"
           :router="router"
+      
+          active-text-color="#619783"
         >
           <el-menu-item index="/goin">首页</el-menu-item>
           <el-menu-item index="/want">明星产品</el-menu-item>
           <el-submenu index="/dujia">
             <template slot="title">独家品牌</template>
-             <el-menu-item index="/kecheng">课程</el-menu-item>
+             <el-menu-item index="/dujia/kecheng">课程</el-menu-item>
              <el-menu-item index="/tupian">图片</el-menu-item>
           </el-submenu>
           <!-- <el-menu-item index="/dujia">
@@ -205,18 +207,20 @@ body {
 
 .el-header {
   display: flex;
+  height: 80px !important;
   justify-content: space-between;
   align-content: center;
   width: 100%;
   margin: 0 auto;
   position: fixed;
   top: 0;
-  background-color: #fff;
   opacity: 0.8;
   z-index: 10000;
   border-bottom: 1px solid #ccc;
+  font-size: 20px;
+  background-color: #fff;
   .logo {
-    width: 65px;
+    width: 88px;
     padding: 10px;
     img {
       width: 100%;
@@ -274,5 +278,19 @@ body {
       line-height: 30px;
     }
   }
+}
+</style>
+<style lang="scss">
+.el-submenu__title{
+  font-size: 20px !important;
+}
+.el-menu-item{
+  font-size: 20px !important;
+}
+.el-menu{
+  background-color: transparent !important;
+  // font-size: 20px;
+  padding: 20px;
+  font-weight: 600;
 }
 </style>

@@ -10,8 +10,6 @@
 export default {
   data() {
     return {
-      loading: true,
-      caseList: []
     };
   },
 }
@@ -24,8 +22,6 @@ export default {
  }
 .contact{
     width: 100%;
-    height: 100%;
-    // background-color: aqua;
-   
+    height: 100%;   
 }
 </style>

@@ -1,41 +1,54 @@
 <template>
-  <div class="case">
-    <div class="case-section mt60">
-      <div class="case-section-content textCenter">
-        <img src="../assets/img/16.png" alt="">
-        <img src="../assets/img/17.png" alt="">
-        <img src="../assets/img/18.png" alt="">
-        <img src="../assets/img/19.png" alt="">
-        <img src="../assets/img/20.png" alt="">
+  <div class="case mt80">
+      <img src="../assets/img/gaoguan.jpg" alt="" class="w100">
+      <div class="top">
+        <h3>公司赋能讲师团</h3>
+        <p>lecturer</p>
+        <div class="border"></div>
       </div>
-    </div>
+      <!-- 讲师介绍 -->
+      <div class="lecturer">
+        <div class="pic">
+          <div :key="item" class="ttt" v-for="item in 9" >
+            <div class="yyy"></div>
+            <p>宋 姝慧</p>
+            <p>深圳市道本君逸贸易有限公司总裁、《婚姻幸福银行》创始人</p>
+            <p>美国心理学家约翰·格雷亲授-幸福人生教练</p>
+            <p>美国爱家婚恋协会辅导师</p>
+            <p>女性生命成长智慧女神</p>
+          </div> 
+        </div>
+      </div>
+
+      <div class="top">
+        <h3>专家团</h3>
+        <p>Expert group</p>
+        <div class="border"></div>
+      </div>
+      <!-- 讲师介绍 -->
+      <div class="lecturer">
+        <div class="pic">
+          <div :key="item" class="ttt" v-for="item in 9" >
+            <div class="yyy"></div>
+            <p>吕 伟</p>
+            <p>精通亚太地区医学，藏医七经八脉传承人</p>
+            <p>凭借对方磁场感应你的身体，健康状况了然于胸</p>
+            <p>擅长调理七经八脉</p>
+            <p>感受一生从未体会过的愉悦和轻松，重塑身、心、灵健康体魄</p>
+          </div> 
+        </div>
+      </div>
   </div>
 </template>
 <script>
-import Banner from "../components/Banner";
 export default {
-  components: {
-    Banner
-  },
   data() {
     return {
-      loading: true,
-      caseList: []
+
     };
   },
   mounted() {
-    window.console.log("case");
-    this.$http
-      .get("Cases/GetCasesAll")
-      .then(response => {
-        //console.log(response);
-        this.caseList = response.data;
-        //window.console.log(this.caseList);
-        this.loading = false;
-      })
-      .catch(function(error) {
-        window.console.log(error);
-      });
+
   }
 };
 </script>
@@ -45,13 +58,6 @@ export default {
   .case {
     width: 100%;
     height: 100%;
-    .banner{
-      height: 160px;
-      .banner .banner-title{
-        font-size: 30px;
-        line-height: 160px;
-      }
-    }
     background-color: #14679f;
     .case-section {
       width: 100%;
@@ -71,80 +77,32 @@ export default {
 .case {
   width: 100%;
   height: 100%;
-  position: relative;
-  overflow: hidden;
-  // background-color: #14679f;
-
-  &-section {
-    width: 100%;
-    &-content {
+  .lecturer{
+    width: 1000px;
+    margin: 20px auto;
+    
+    .pic{
       width: 100%;
-      min-height: 1000px;
-      margin: 0 auto;
-      background-color: #fff;
-      text-align: center
-      img{
-        // width: 100%;
+      .ttt{
+        width: 230px;
+        margin: 10px;
+        height: 602px;
+        display: inline-block;
+        background-color: #e4f4f4;
+        cursor: pointer;
+        transition: all 0.6s;
+        .yyy{
+        width: 230px;
+        height: 396px;
+        background: url(../assets/img/song.jpg) center;
+        background-size: cover;
       }
-
-      // &-list {
-      //   width: 100%;
-      //   height: 500px;
-      //   display: flex;
-      //   justify-content: center;
-      //   align-items: center;
-      //   border: 1px solid pink;
-
-      //   img {
-      //     width: 612px;
-      //     height: 314px;
-      //   }
-      //   .content-list-abstract {
-      //     width: 290px;
-      //     height: 350px;
-      //     padding: 0 20px;
-      //     display: flex;
-      //     flex-direction: column;
-      //     justify-content: space-around;
-      //     .abstract-title {
-      //       line-height: 30px;
-      //       font-size: 22px;
-      //       color: #e13834;
-      //     }
-      //     .abstract-content {
-      //       height: 150px;
-      //       color: #484848;
-      //       font-size: 15px;
-
-      //       overflow: hidden;
-      //       text-overflow: ellipsis;
-      //       display: -webkit-box;
-      //       -webkit-line-clamp: 7;
-      //       -webkit-box-orient: vertical;
-      //       white-space: normal !important;
-      //       word-wrap: break-word;
-      //       //border: 1px solid pink;
-      //     }
-      //     .more {
-      //       display: flex;
-      //       justify-content: flex-start;
-      //       .text-decoration {
-      //         text-decoration: none;
-
-      //         span {
-      //           color: #000;
-      //         }
-      //         img {
-      //           width: 12px;
-      //           height: 12px;
-      //         }
-      //       }
-      //     }
-      //   }
-      //   .abstract-active {
-      //     order: -1;
-      //   }
-      // }
+      
+      }
+      .ttt:hover{
+        transform: scale(1.2);
+        // opacity: 0.8;
+      }
     }
   }
 }
