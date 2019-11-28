@@ -9,17 +9,16 @@
       <!-- 讲师介绍 -->
       <div class="lecturer">
         <div class="pic">
-          <div :key="item" class="ttt" v-for="item in 9" >
-            <div class="yyy"></div>
-            <p>宋 姝慧</p>
-            <p>深圳市道本君逸贸易有限公司总裁、《婚姻幸福银行》创始人</p>
-            <p>美国心理学家约翰·格雷亲授-幸福人生教练</p>
-            <p>美国爱家婚恋协会辅导师</p>
-            <p>女性生命成长智慧女神</p>
+          <div :key="index" class="ttt textCenter" v-for="(item,index) in lecturer" @click="toDetails(item)">
+            <!-- <div class="yyy"></div> -->
+            <img :src="'http://106.52.31.88:7088/images'+item.lecturerImg" alt="" class="yyy">
+            <p class="mt10">{{item.lecturerName}}</p>
+            <p class="mt10">{{item.lecturerIntroductionOne}}</p>
+            <p class="mt10 mb10">{{item.lecturerIntroductionTwo}}</p>
+            <el-button plain size="mini"  @click="toDetails(item)">查看更多</el-button>
           </div> 
         </div>
       </div>
-
       <div class="top">
         <h3>专家团</h3>
         <p>Expert group</p>
@@ -28,13 +27,12 @@
       <!-- 讲师介绍 -->
       <div class="lecturer">
         <div class="pic">
-          <div :key="item" class="ttt" v-for="item in 9" >
-            <div class="yyy"></div>
-            <p>吕 伟</p>
-            <p>精通亚太地区医学，藏医七经八脉传承人</p>
-            <p>凭借对方磁场感应你的身体，健康状况了然于胸</p>
-            <p>擅长调理七经八脉</p>
-            <p>感受一生从未体会过的愉悦和轻松，重塑身、心、灵健康体魄</p>
+          <div :key="index" class="ttt textCenter" v-for="(item,index) in expert"  @click="toDetails(item)">
+            <img :src="'http://106.52.31.88:7088/images'+item.lecturerImg" alt="" class="yyy">
+            <p class="mt10">{{item.lecturerName}}</p>
+            <p class="mt10">{{item.lecturerIntroductionOne}}</p>
+            <p class="mt10 mb10">{{item.lecturerIntroductionTwo}}</p>
+            <el-button plain size="mini"  @click="toDetails(item)">查看更多</el-button>
           </div> 
         </div>
       </div>
@@ -44,11 +42,38 @@
 export default {
   data() {
     return {
-
+      tableData:[],
+      lecturer:[],
+      expert:[]
     };
   },
+  methods:{
+    toDetails(item){
+      this.$router.push({
+        path:'/jsDetail',
+        query:{
+          id:item.id
+        }
+      })
+    },
+    getData(){
+      this.$http.post('api/v1/DaoBen/queryLecturer').then(res=>{
+          if(res.data.msg=='ok'){
+            this.tableData=res.data.result;
+            this.tableData.map(item=>{
+              if(item.lecturerType=='lecturer'){
+                this.lecturer.push(item)
+              }
+              if(item.lecturerType=='expert'){
+                this.expert.push(item);
+              }
+            })
+          }
+      })
+    }
+  },
   mounted() {
-
+    this.getData()
   }
 };
 </script>

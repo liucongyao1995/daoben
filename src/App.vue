@@ -28,7 +28,12 @@
           </el-menu-item> -->
 
           <el-menu-item index="/case">技术支持</el-menu-item>
-          <el-menu-item index="/contact">联系我们</el-menu-item>
+          <el-submenu index="/contact">
+            <template slot="title">联系我们</template>
+             <el-menu-item index="/news">最新资讯</el-menu-item>
+             <el-menu-item index="/contact">联系我们</el-menu-item>
+          </el-submenu>
+          <!-- <el-menu-item index="/contact">联系我们</el-menu-item> -->
           <!-- <el-menu-item index="/want">私享•源动力生殖生命力管理</el-menu-item> -->
         </el-menu>
       </el-header>

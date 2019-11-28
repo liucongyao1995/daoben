@@ -39,7 +39,6 @@
 </template>
 
 <script>
-import Banner from "../components/Banner";
 export default {
   data() {
     return {
@@ -71,9 +70,6 @@ export default {
         }
       }
     };
-  },
-  components: {
-    Banner
   },
   created() {
     this.$http

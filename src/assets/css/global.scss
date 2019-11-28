@@ -1,14 +1,23 @@
+.mt10{
+    margin-top: 10px;
+}
 .mt60{
     margin-top: 60px;
 }
 .mt80{
     margin-top: 80px;
 }
+.mb10{
+    margin-bottom: 10px;
+}
 .w100{
     width: 100%;
 }
 .h100{
     height: 100%;
+}
+.color{
+    color: #00b5c3;
 }
 .textCenter{
     text-align: center;
@@ -26,7 +35,7 @@
     h3,
     p {
       text-align: center;
-      color: #3c6088;
+      color: #00b5c3;
       font-weight: 400;
       padding: 10px 0;
     }
@@ -37,7 +46,7 @@
       font-size: 20px;
     }
     .border {
-      border-bottom: 1px solid #3c6088;
+      border-bottom: 1px solid #00b5c3;
       width: 15%;
       margin: 0 auto;
     }

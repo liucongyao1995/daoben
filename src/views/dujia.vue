@@ -11,13 +11,13 @@
             <el-row class="xingfu eee">
               <img src="../assets/img/1.jpg" alt=""  @click="toDetails">
               <p>{{list[0].courseName}}</p>
-              <div>{{list[0].detial}}</div>
+              <div class="pd10">{{list[0].detial}}</div>
             </el-row>
             <div class="pic">
               <div class="ttt" v-for="(item,index) in fristList" :key="index" style="font-size:10px">
                 <img src="../assets/img/1.jpg" alt="" @click="toDetails"/>
                 <p class="font14">{{item.courseName}}</p>
-                <div class="pd10">{{item.detial}}</div>
+                <div class="pd10 detail">{{item.detial}}</div>
               </div> 
             </div>
           </div>
@@ -80,6 +80,7 @@ export default {
           width: 1000px;
           margin: 20px auto;
           .xingfu{ 
+            background-color: #e4f4f4;
             img{
               text-align: center;
               width: 100%;
@@ -94,6 +95,13 @@ export default {
             background-color: #e4f4f4;
             cursor: pointer;
             transition: all 0.6s;
+            .detail{
+              width: 210px;
+              height: 28px;
+              overflow: hidden;
+              text-overflow: ellipsis;
+              white-space: nowrap;
+            }
             img{
               width: 230px;
             }

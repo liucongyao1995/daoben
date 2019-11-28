@@ -47,18 +47,13 @@
           </div>
         </div>
         <div class="p-video" >
-          <video-player
-            class="video-player vjs-custom-skin"
-            ref="videoPlayer"
-            :playsinline="true"
-            :options="playerOptions"
+          <video-player class="video-player vjs-custom-skin" ref="videoPlayer" :playsinline="true" :options="playerOptions"
           ></video-player>
         </div>
       </div>
     </div>
   </div>
 </template>
-
 <script>
 import jiti from '../assets/img/jiti.jpg';
 import baima from '../assets/img/bgtop.jpg';
@@ -66,12 +61,9 @@ import shidafuneng from '../assets/img/shidafuneng.jpg';
 import zhuanzhu from '../assets/img/zhuanzhu.jpg';
 import sixiang from '../assets/img/sixiang.jpg';
 import gaoguan from '../assets/img/gaoguan.jpg';
-// import yier from '../assets/img/12.jpg';
-// import Banner from "../components/Banner";
 import { swiper, swiperSlide } from "vue-awesome-swiper";
 export default {
   components: {
-
     swiper,
     swiperSlide
   },
@@ -109,27 +101,22 @@ export default {
       honorList: [],
       partnerImg: [],
       courseList: [
-        
-          {
-            Content:'道本君逸成立，重磅推出私密抗衰项目',
-            Year:'2008'
-          },
-          {
-            Content:'产品配方荣获国家专利对于女性私密健康和年轻态有卓越的效果打造内在健康、外在性感的精致女人',
-            Year:'2010'
-          },
-      
-        
-          {
-            Content:'《婚姻幸福银行》创立，国内注有商标教育品牌以传播婚姻幸福为宗旨',
-            Year:'2012'
-          },
-          {
-            Content:'全面完善生殖健康品项，呵护女性同年被授予”捐资助学突出贡献企业”',
-            Year:'2015'
-          },
-      
-        
+        {
+          Content:'道本君逸成立，重磅推出私密抗衰项目',
+          Year:'2008'
+        },
+        {
+          Content:'产品配方荣获国家专利对于女性私密健康和年轻态有卓越的效果打造内在健康、外在性感的精致女人',
+          Year:'2010'
+        },
+        {
+          Content:'《婚姻幸福银行》创立，国内注有商标教育品牌以传播婚姻幸福为宗旨',
+          Year:'2012'
+        },
+        {
+          Content:'全面完善生殖健康品项，呵护女性同年被授予”捐资助学突出贡献企业”',
+          Year:'2015'
+        },
         {
           Content:'引进美臀抗衰、盆骨闭合项目立志于传播女性生殖健康管理',
           Year:'2016'
@@ -138,21 +125,12 @@ export default {
           Content:'授予”大爱传播企业”让更多的女性学会经营，婚姻中的智慧和幸福感',
           Year:'2017'
         },
-        
-        
         {
           Content:'夯实年：三年内成为广东省内生殖年轻态健康管理品牌荣获美美企业管理：“优秀企业文化奖”',
           Year:'2019'
-        }
-     
-            
+        }  
       ],
-      teamItem: [
-        {Img:jiti},
-        {Img:gaoguan},
-        // {Img:yier},
-
-      ],
+      teamItem: [{Img:jiti},{Img:gaoguan}],
       swiperOption: {
         autoplay:{
           dely:1000
@@ -170,13 +148,6 @@ export default {
     
   },
   methods:{
-    playVideo(){
-      this.showVideo=false;
-      if(this.$refs.videoPlayer){
-              this.$refs.videoPlayer.player.play();
-      }
-
-    }
   }
 };
 </script>
@@ -248,7 +219,6 @@ export default {
         padding: 0;
    
       }
-
       //企业文化
       .content-culture {
         height: 100%;
@@ -654,26 +624,7 @@ export default {
   margin: 1px 0;
 }
 
-.top {
-  h3,
-  p {
-    text-align: center;
-    color: #3c6088;
-    font-weight: 400;
-    padding: 10px 0;
-  }
-  h3 {
-    font-size: 30px;
-  }
-  p {
-    font-size: 20px;
-  }
-  .border {
-    border-bottom: 1px solid #3c6088;
-    width: 15%;
-    margin: 0 auto;
-  }
-}
+
 // .swiper-button-disabled {
 //   display: none;
 // }

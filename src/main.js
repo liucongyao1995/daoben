@@ -8,6 +8,11 @@ import 'vant/lib/index.css';
 import './assets/css/global.scss'
 Vue.use(Vant);
 
+// 百度地图
+import BaiduMap from 'vue-baidu-map'
+Vue.use(BaiduMap,{
+  ak:"HaLcIli6y7uIT6cTl7lSUMupkcI7UZdw"
+})
 
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
