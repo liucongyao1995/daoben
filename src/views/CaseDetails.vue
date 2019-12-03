@@ -1,6 +1,6 @@
 <template>
   <div class="case">
-    <banner img="../assets/img/bgtop.jpg" />
+    <!-- <banner img="../assets/img/bgtop.jpg" /> -->
     <div class="case-product">
       <div class="case-product-content">
         <img v-lazy="imgserver+caseIdList.Img" alt />
@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import Banner from "../components/Banner";
+// import Banner from "../components/Banner";
 export default {
   components: {
     Banner

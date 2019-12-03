@@ -46,9 +46,11 @@
             </swiper>
           </div>
         </div>
+        <img src="../assets/img/hai.png" alt="" v-if="showVideo" class="point" @click="toPlay">
         <div class="p-video" >
-          <video-player class="video-player vjs-custom-skin" ref="videoPlayer" :playsinline="true" :options="playerOptions"
-          ></video-player>
+          <video-player class="video-player vjs-custom-skin" ref="videoPlayer" :playsinline="true" :options="playerOptions" v-show="!showVideo">
+
+          </video-player>
         </div>
       </div>
     </div>
@@ -96,7 +98,7 @@ export default {
           fullscreenToggle: true //全屏按钮
         }
       },
-      Img:[zhuanzhu,baima,sixiang,shidafuneng],
+      Img:[zhuanzhu,baima,sixiang],
       loading: true,
       honorList: [],
       partnerImg: [],
@@ -148,6 +150,10 @@ export default {
     
   },
   methods:{
+    toPlay(){
+      this.showVideo=false;
+      this.$refs.videoPlayer.player.play();
+    }
   }
 };
 </script>
@@ -199,7 +205,6 @@ export default {
             padding: 12px
           }
         }
-
         .summary-right {
           width: 99%;
           height: 310px;
@@ -217,64 +222,7 @@ export default {
       //发展历程
       .content-course {
         padding: 0;
-   
       }
-      //企业文化
-      .content-culture {
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: flex-start;
-        padding: 12px;
-        background-color: #c2daeb;
-        h3 {
-          color: #3c6088;
-          font-size: 16px;
-        }
-        p {
-          color: #3c6088;
-          font-size: 10px;
-          padding: 0;
-        }
-        span {
-          font-weight: 400;
-          line-height: 26px;
-          font-size: 10px;
-          padding: 0;
-        }
-      }
-
-      //公司荣誉
-      .content-honor {
-        padding: 50px 0;
-        .honor-show {
-          width: 1000px;
-          margin: 30px auto;
-          display: flex;
-          flex-wrap: wrap;
-          justify-content: flex-start;
-          align-content: flex-start;
-
-          li {
-            width: 220px;
-            height: 320px;
-            margin-left: 15px;
-            list-style: none;
-            border: 1px solid palegoldenrod;
-
-            img {
-              width: 100%;
-              height: 100%;
-            }
-          }
-        }
-        p {
-          text-align: center;
-          color: #3c6088;
-        }
-      }
-
       //团队风采
       .content-team {
         padding: 0 0;
@@ -284,66 +232,12 @@ export default {
           background-size: cover;
         }
       }
-      //合作伙伴
-      .content-partner {
-        padding: 50px 0;
-        .partner-img {
-          width: 950px;
-          margin: 20px auto;
-          display: flex;
-          justify-content: flex-start;
-          flex-wrap: wrap;
-          li {
-            width: 107px;
-            height: 107px;
-            list-style: none;
-            margin: 10px 25px;
-
-            img {
-              width: 100%;
-              height: 100%;
-              border: 1px solid rgb(194, 218, 235);
-            }
-          }
-        }
-      }
     }
-  }
-}
-@keyframes imgboxkey {
-  0% {
-    border: solid rgb(29, 66, 185) 2px;
-  }
-  40% {
-    border: solid rgb(255, 255, 255) 2px;
-  }
-  60% {
-    border: solid rgb(255, 255, 255) 2px;
-  }
-  100% {
-    border: solid rgb(29, 66, 185) 2px;
-  }
-}
-
-@keyframes imgbo {
-  0% {
-    transform: scale(1);
-    box-shadow: 0px 0px 0px 0px #ababab;
-  }
-  50% {
-    transform: scale(1.1);
-    box-shadow: 0px 0px 10px 5px #ababab;
-  }
-  100% {
-    transform: scale(1);
-    box-shadow: 0px 0px 0px 0px #ababab;
   }
 }
 .el-divider--horizontal {
   margin: 1px 0;
 }
-
-
 .order {
   order: -1;
 }
@@ -372,7 +266,6 @@ export default {
   text-align: center;
   padding-bottom: 20px;
   padding: 5%;
-  //background-color: #14679f;
   .el-dialog__wrapper {
     position: fixed;
     top: 0;
@@ -391,7 +284,6 @@ export default {
   }
 }
 }
-
 .go-in {
   width: 100%;
   height: 100%;
@@ -406,7 +298,6 @@ export default {
   .el-carousel__item:nth-child(2n) {
     background-color: #99a9bf;
   }
-  
   .el-carousel__item:nth-child(2n+1) {
     background-color: #d3dce6;
   }
@@ -497,63 +388,6 @@ export default {
           }
         }
       }
-
-      //企业文化
-      .content-culture {
-        height: 450px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: flex-start;
-        padding-left: 100px;
-        background-color: #c2daeb;
-        h3 {
-          color: #3c6088;
-          font-size: 26px;
-        }
-        p {
-          color: #3c6088;
-          font-size: 26px;
-          padding: 5px 0;
-        }
-        span {
-          font-weight: 400;
-          line-height: 36px;
-          font-size: 18px;
-          padding: 5px 0;
-        }
-      }
-
-      //公司荣誉
-      .content-honor {
-        padding: 50px 0;
-        .honor-show {
-          width: 1000px;
-          margin: 30px auto;
-          display: flex;
-          flex-wrap: wrap;
-          justify-content: flex-start;
-          align-content: flex-start;
-
-          li {
-            width: 220px;
-            height: 320px;
-            margin-left: 15px;
-            list-style: none;
-            border: 1px solid palegoldenrod;
-
-            img {
-              width: 100%;
-              height: 100%;
-            }
-          }
-        }
-        p {
-          text-align: center;
-          color: #3c6088;
-        }
-      }
-
       //团队风采
       .content-team {
         padding: 50px 100px;
@@ -563,71 +397,12 @@ export default {
           background-size: cover;
         }
       }
-
-      //合作伙伴
-      .content-partner {
-        padding: 50px 0;
-        .partner-img {
-          width: 950px;
-          margin: 20px auto;
-          display: flex;
-          justify-content: flex-start;
-          flex-wrap: wrap;
-          li {
-            width: 107px;
-            height: 107px;
-            list-style: none;
-            margin: 10px 25px;
-
-            img {
-              width: 100%;
-              height: 100%;
-              border: 1px solid rgb(194, 218, 235);
-            }
-          }
-        }
-      }
     }
-  }
-}
-
-@keyframes imgboxkey {
-  0% {
-    border: solid rgb(29, 66, 185) 2px;
-  }
-  40% {
-    border: solid rgb(255, 255, 255) 2px;
-  }
-  60% {
-    border: solid rgb(255, 255, 255) 2px;
-  }
-  100% {
-    border: solid rgb(29, 66, 185) 2px;
-  }
-}
-
-@keyframes imgbo {
-  0% {
-    transform: scale(1);
-    box-shadow: 0px 0px 0px 0px #ababab;
-  }
-  50% {
-    transform: scale(1.1);
-    box-shadow: 0px 0px 10px 5px #ababab;
-  }
-  100% {
-    transform: scale(1);
-    box-shadow: 0px 0px 0px 0px #ababab;
   }
 }
 .el-divider--horizontal {
   margin: 1px 0;
 }
-
-
-// .swiper-button-disabled {
-//   display: none;
-// }
 .order {
   order: -1;
 }

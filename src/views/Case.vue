@@ -42,6 +42,9 @@
 export default {
   data() {
     return {
+      current:1,
+      size:10,
+      total:0,
       tableData:[],
       lecturer:[],
       expert:[]
@@ -57,6 +60,7 @@ export default {
       })
     },
     getData(){
+     
       this.$http.post('api/v1/DaoBen/queryLecturer').then(res=>{
           if(res.data.msg=='ok'){
             this.tableData=res.data.result;
@@ -126,7 +130,6 @@ export default {
       }
       .ttt:hover{
         transform: scale(1.2);
-        // opacity: 0.8;
       }
     }
   }

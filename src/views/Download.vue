@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import Banner from "../components/Banner";
+// import Banner from "../components/Banner";
 export default {
   data(){
     return{

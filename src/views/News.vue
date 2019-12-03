@@ -8,15 +8,16 @@
   </div>
   <div class="lecturer">
     <div class="pic">
-      <div :key="index" class="ttt textCenter" v-for="(item,index) in lecturer" @click="toDetails(item)">
-        <img :src="'http://106.52.31.88:7088/images'+item.lecturerImg" alt="" class="yyy">
-        <p class="mt10">{{item.lecturerName}}</p>
-        <p class="mt10">{{item.lecturerIntroductionOne}}</p>
-        <p class="mt10 mb10">{{item.lecturerIntroductionTwo}}</p>
-        <el-button plain size="mini"  @click="toDetails(item)">查看更多</el-button>
+      <div :key="index" class="ttt textCenter" v-for="(item,index) in tableData" @click="toDetails(item)">
+        <img :src="'http://106.52.31.88:7088/images'+item.informationImg" alt="">
+        <p class="mt10">{{item.informationName}}</p>
+        <!-- <p class="mt10">{{item.informationDetail}}</p> -->
+        <p class="mt10 mb10 write font12">{{item.informationIntroduce}}</p>
       </div> 
     </div>
-    </div>
+    <el-pagination background layout="prev, pager, next"  @current-change="handleCurrentChange"  :total="total" class="textCenter">
+		</el-pagination>
+  </div>
   </div>
 </template>
 
@@ -26,7 +27,11 @@ export default {
   name: "news",
   data() {
     return {
+      current:1,
+      total:0,
+      size:10,
       loading: true,
+      tableData:[],
       newsList: [],
       newstype: 1,
       teamItem:[
@@ -39,9 +44,33 @@ export default {
     };
   },
   methods: {
-   
+    handleCurrentChange(val){
+      this.current =val;
+      this.getData();
+		},
+    toDetails(item){
+      this.$router.push({
+        path:"/newsDetails",
+        query:{
+          id:item.id
+        }
+      });
+    },
+    getData(){
+      let params={
+        current:this.current,
+        size:this.size
+      }
+     this.$http.post("api/v1/DaoBen/queryInformation",params).then(res=>{
+       if(res.data.msg=='ok'){
+         this.tableData=res.data.result.records;
+         this.total=res.data.result.total;
+       }
+     })
+   }
   },
   mounted() {
+    this.getData();
   },
 
 };
@@ -60,18 +89,16 @@ export default {
   .pic{
     width: 100%;
     .ttt{
-      width: 230px;
+      width: 300px;
       margin: 10px;
-      height: 602px;
       display: inline-block;
       background-color: #e4f4f4;
       cursor: pointer;
       transition: all 0.6s;
-      .yyy{
-      width: 230px;
+      img{
+      width: 300px;
       height: 396px;
-      background: url(../assets/img/song.jpg) center;
-      background-size: cover;
+
       }
       
     }

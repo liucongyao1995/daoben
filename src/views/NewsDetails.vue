@@ -1,6 +1,6 @@
 <template>
-  <div class="NewsDetails">
-   <div class="mt80" style="height:800px;width:100%;background-color:pink">页面需要调整  敬请期待</div>
+  <div class="NewsDetails mt80">
+   <div class="content" v-html="tableData.informationDetail"></div>
   </div>
 </template>
 
@@ -10,20 +10,27 @@ export default {
   name: "NewsDetails",
   data() {
     return {
-  
+      id:'',
+      tableData:[]
     };
   },
 
   mounted() {
-
-  },
-  updated() {
-
-    window.scroll(0,0);
-
+    this.id =this.$route.query.id;
+    this.getData();
   },
   methods: {
-
+    async getData(){
+      let res= await this.$http.post(`api/v1/DaoBen/queryInformationById?id=${this.id}`)
+      if(res.data.msg=='ok'){
+         this.tableData =res.data.result;
+      }
+      // .then(res=>{
+      //   if(res.data.msg =='ok'){
+      //     this.tableData =res.data.result;
+      //   }
+      // })
+    }
   }
 };
 </script>
@@ -32,5 +39,10 @@ export default {
 .NewsDetails{
   height: 100%;
   width: 100%;
+  .content{
+    width: 600px;
+    margin: 0 auto;
+
+  }
 }
 </style>

@@ -42,7 +42,7 @@ Vue.use(VueLazyload, {
 Vue.config.productionTip = false
 
 //设置超时时间
-axios.defaults.timeout = 5000
+axios.defaults.timeout = 15000
 //设置api地址
 //全局定义axios
 axios.defaults.baseURL = 'http://106.52.31.88:8888/'

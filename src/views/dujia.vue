@@ -9,21 +9,24 @@
           <div class="course">
             <!-- 版块 -->
             <el-row class="xingfu eee">
-              <img src="../assets/img/1.jpg" alt=""  @click="toDetails">
+              <img :src="'http://106.52.31.88:7088/images'+list[0].img" alt=""  @click="toDetails(list[0].id)">
               <p>{{list[0].courseName}}</p>
-              <div class="pd10">{{list[0].detial}}</div>
+              <div class="pd10">{{list[0].introduction}}</div>
             </el-row>
             <div class="pic">
               <div class="ttt" v-for="(item,index) in fristList" :key="index" style="font-size:10px">
-                <img src="../assets/img/1.jpg" alt="" @click="toDetails"/>
+                <img :src="'http://106.52.31.88:7088/images'+item.img" alt="" @click="toDetails(item.id)"/>
                 <p class="font14">{{item.courseName}}</p>
-                <div class="pd10 detail">{{item.detial}}</div>
+                <div class="pd10 detail">{{item.introduction}}</div>
               </div> 
             </div>
           </div>
+          <el-pagination background layout="prev, pager, next"  @current-change="handleCurrentChange"  :total="total" class="textCenter">
+	        </el-pagination>
         </div>
     </div>
     </div>
+    
   </div>
 </template>
 <script>
@@ -31,27 +34,45 @@
 export default {
   data() {
     return {
+      current:1,
+      total:0,
+      size:10,
       list:[{courseName:''}], //课程数据
       fristList:[]
     };
   },
   methods:{
-    toDetails(){
-      this.$router.push('/newsDetails')
-    }
-  },
-  created(){
-      this.$http
-      .post("api/v1/DaoBen/queryCourse")
-      .then(res => {
-        this.list=res.data.result;
-        this.fristList=res.data.result.slice(1)
-        window.console.log(this.fristList,123);
-     
+    handleCurrentChange(val){
+      this.current =val;
+      this.getData();
+		},
+    toDetails(id){
+      this.$router.push(
+        {
+          path:'/jishu',
+          query:{
+            id:id
+          }
+        }
+      )
+    },
+    getData(){
+       let params={
+        current:this.current,
+        size:this.size
+      } 
+      this.$http .post("api/v1/DaoBen/queryCourse",params).then(res => {
+        this.list=res.data.result.records;
+        this.fristList=res.data.result.records.slice(1);
+        this.total = res.data.result.total;
       })
       .catch(function(error) {
         window.console.log(error);
       });
+    }
+  },
+  created(){
+     this.getData();
   }
 }
 </script>
@@ -104,6 +125,7 @@ export default {
             }
             img{
               width: 230px;
+              height: 180px;
             }
         }
           img:hover{
